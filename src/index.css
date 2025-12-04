@@ -32,6 +32,8 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .input::placeholder { color: rgba(255,255,255,0.6); }
 .input:focus { border-color: #a78bfa; box-shadow: 0 0 0 3px rgba(167,139,250,0.25); }
 .input-wrap { width:100%; border-radius:16px; overflow:hidden; }
+.story-text { font-size: clamp(15px, 4vw, 18px); background: linear-gradient(90deg,#ffd54f,#ffe082,#ffd54f); -webkit-background-clip: text; background-clip: text; color: #ffd54f; }
+.chips-row { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 
 .chips { display: flex; gap: 12px; }
 .chip { flex: 1; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); cursor: pointer; transition: 200ms; text-align:center; }

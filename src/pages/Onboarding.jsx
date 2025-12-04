@@ -95,6 +95,7 @@ const Onboarding = () => {
                     {/* Имя */}
                     <div className="field">
                         <label className="label">Как тебя зовут?</label>
+                        <div className="input-wrap">
                         <input
                             type="text"
                             name="name"
@@ -104,6 +105,7 @@ const Onboarding = () => {
                             className="input"
                             maxLength={50}
                         />
+                        </div>
                     </div>
 
                     {/* Пол */}
@@ -130,6 +132,7 @@ const Onboarding = () => {
                     {/* Город */}
                     <div className="field">
                         <label className="label">В каком городе ты живешь?</label>
+                        <div className="input-wrap">
                         <input
                             type="text"
                             name="city"
@@ -139,11 +142,13 @@ const Onboarding = () => {
                             className="input"
                             maxLength={50}
                         />
+                        </div>
                     </div>
 
                     {/* Хобби */}
                     <div className="field">
                         <label className="label">Какое у тебя любимое хобби?</label>
+                        <div className="input-wrap">
                         <input
                             type="text"
                             name="hobby"
@@ -153,6 +158,7 @@ const Onboarding = () => {
                             className="input"
                             maxLength={50}
                         />
+                        </div>
                     </div>
 
                     {/* Ошибка */}

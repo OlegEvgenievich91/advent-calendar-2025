@@ -8,11 +8,11 @@ export default function Diploma() {
   return (
     <div className="container-center">
       <div className="diploma-wrap">
-        <div className="diploma">
-          <div className="diploma-title">ДИПЛОМ НАСТОЯЩЕГО ВОЛШЕБНИКА</div>
-          <div className="diploma-sub">Настоящим подтверждается, что</div>
-          <div className="diploma-name">{user?.name || 'Юный Волшебник'}</div>
-          <div className="diploma-body diploma-script">успешно {verb} все 10 испытаний, {verb2} смекалку и доброе сердце.</div>
+        <div className="diploma" style={{fontFamily:'Playfair Display, serif'}}>
+          <div className="diploma-title" style={{fontSize:32}}>ДИПЛОМ НАСТОЯЩЕГО ВОЛШЕБНИКА</div>
+          <div className="diploma-sub" style={{fontSize:16}}>Настоящим подтверждается, что</div>
+          <div className="diploma-name" style={{fontSize:28}}>{user?.name || 'Юный Волшебник'}</div>
+          <div className="diploma-body" style={{fontSize:16}}>успешно {verb} все 10 испытаний, {verb2} смекалку и доброе сердце.</div>
           <div style={{display:'flex', justifyContent:'center', margin:'12px 0'}}>
             <div style={{fontSize:64}}>🎄</div>
           </div>

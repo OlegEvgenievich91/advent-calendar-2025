@@ -20,14 +20,14 @@ export default function GameAnagram({ question, letters: inputLetters, word, hin
         <div className="title" style={{fontSize:20, marginBottom:10}}>🎁 Анаграмма</div>
         <div className="subtitle" style={{marginBottom:8}}>{question}</div>
         {hintEmoji && <div className="subtitle" style={{marginBottom:12, fontSize:20}}>{hintEmoji}</div>}
-        <div className="chips" style={{flexWrap:'wrap', justifyContent:'center'}}>
+        <div className="chips-row" style={{justifyContent:'center'}}>
           {letters.map((ch, i) => (
-            <button key={i} onClick={() => pick(i)} className={`chip ${picked.includes(i)?'active':''}`} style={{width:48, height:48}} disabled={picked.includes(i)}>{ch}</button>
+            <button key={i} onClick={() => pick(i)} className={`chip ${picked.includes(i)?'active':''}`} style={{width:52, height:52}} disabled={picked.includes(i)}>{ch}</button>
           ))}
         </div>
-        <div className="chips" style={{flexWrap:'wrap', justifyContent:'center', marginTop:12}}>
+        <div className="chips-row" style={{marginTop:10, justifyContent:'center'}}>
           {picked.map((i, k) => (
-            <button key={`${i}-${k}`} onClick={() => unpick(i)} className="chip active" style={{width:48, height:48}}>{letters[i]}</button>
+            <button key={`${i}-${k}`} onClick={() => unpick(i)} className="chip active" style={{width:52, height:52}}>{letters[i]}</button>
           ))}
         </div>
         <div className="subtitle" style={{marginTop:8}}>{current}</div>

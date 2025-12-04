@@ -5,9 +5,16 @@ import PaywallModal from '../components/PaywallModal.jsx'
 import AccessModal from '../components/AccessModal.jsx'
 
 const statusForDay = (day, currentDay, isPaid) => {
+  if (day === 1) {
+    if (currentDay > 1) return 'done'
+    return 'active'
+  }
+  if (!isPaid) {
+    // Дни 2-10 заблокированы без оплаты, даже если есть прогресс
+    return 'locked_paid'
+  }
   if (day < currentDay) return 'done'
   if (day === currentDay) return 'active'
-  if (day > 1 && !isPaid) return 'locked_paid'
   return 'locked'
 }
 
@@ -43,7 +50,7 @@ const Calendar = () => {
   const { resetProgress } = useAuth()
 
   const handleClick = (day, status) => {
-    if (status === 'active' || status === 'done') {
+    if (status === 'active' || (status === 'done' && isPaid)) {
       navigate(`/day/${day}`)
       return
     }

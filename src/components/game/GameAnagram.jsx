@@ -41,7 +41,7 @@ export default function GameAnagram({ question, letters: inputLetters, word, hin
             <button key={`${i}-${k}`} onClick={() => unpick(i)} className="chip active" style={{width:64, height:64, fontSize:'22px', borderBottom:'2px solid rgba(255,255,255,0.3)'}}>{letters[i]}</button>
           ))}
         </div>
-        <div className="subtitle" style={{marginTop:8}}>{current}</div>
+        {/* удалили техническую строку текущего слова */}
         {hintEmoji && <div className="subtitle" style={{marginTop:12, fontSize:48}}>{hintEmoji}</div>}
         <div style={{marginTop:12, display:'flex', gap:10, justifyContent:'center'}}>
           <button onClick={submit} className="btn btn-primary" style={{padding:'16px 20px', fontSize:'20px'}}>Проверить</button>

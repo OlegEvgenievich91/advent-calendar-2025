@@ -32,14 +32,18 @@ export default function PaywallModal({ onClose }) {
     }
   }
   return (
-    <div className="modal">
-      <div className="modal-card">
-        <div className="title" style={{fontSize:22}}>Доступ к платным дням</div>
-        <div className="subtitle" style={{marginBottom:16}}>Чтобы открыть дни 2–10, оплати доступ в Telegram Stars.</div>
+    <div className="modal" style={{background:'rgba(0,0,0,0.95)'}}>
+      <div className="modal-card" style={{padding:24}}>
+        <div className="title" style={{fontSize:26, marginBottom:10}}>Полный доступ</div>
+        <div className="subtitle" style={{marginBottom:16}}>Открой дни 2–10 и весь контент</div>
         {error && <div className="info" style={{marginBottom:12, border:'1px solid rgba(239,68,68,.5)', background:'rgba(239,68,68,.15)'}}>{error}</div>}
-        <div style={{display:'flex', gap:12, justifyContent:'center'}}>
+        <div style={{display:'grid', gap:12}}>
+          <button className="btn btn-gold" onClick={buy} disabled={loading}>{loading ? 'Ожидание...' : 'Telegram Stars (250 ⭐️)'}</button>
+          <button className="btn btn-secondary" onClick={()=> alert('Для оплаты картой напишите менеджеру')} style={{background:'rgba(255,255,255,0.9)', color:'#111'}}>Карта РФ (500 ₽)</button>
+          <button className="btn btn-primary" onClick={()=> window.location.href = 'tg://resolve?domain=olegevgenievich56'}>Через менеджера</button>
+        </div>
+        <div style={{marginTop:12, textAlign:'center'}}>
           <button onClick={onClose} className="btn btn-secondary">Закрыть</button>
-          <button onClick={buy} className="btn btn-primary" disabled={loading}>{loading ? 'Ожидание...' : 'Купить за Stars'}</button>
         </div>
       </div>
     </div>

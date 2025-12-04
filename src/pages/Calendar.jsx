@@ -50,6 +50,10 @@ const Calendar = () => {
   const { resetProgress } = useAuth()
 
   const handleClick = (day, status) => {
+    if (day === 1) {
+      navigate('/day/1')
+      return
+    }
     if (status === 'active' || (status === 'done' && isPaid)) {
       navigate(`/day/${day}`)
       return

@@ -17,23 +17,23 @@ export default function GameAnagram({ question, letters: inputLetters, word, hin
   return (
     <div style={{textAlign:'center'}}>
       <div className="card" style={{padding:20}}>
-        <div className="title" style={{fontSize:20, marginBottom:10}}>🎁 Анаграмма</div>
-        <div className="subtitle" style={{marginBottom:8}}>{question}</div>
+        <div className="title" style={{fontSize:28, marginBottom:12}}>🎁 Анаграмма</div>
+        <div className="subtitle question-text" style={{marginBottom:16, fontSize: 'clamp(20px, 5vw, 24px)'}}>{question}</div>
         {hintEmoji && <div className="subtitle" style={{marginBottom:12, fontSize:20}}>{hintEmoji}</div>}
         <div className="chips-row" style={{justifyContent:'center'}}>
           {letters.map((ch, i) => (
-            <button key={i} onClick={() => pick(i)} className={`chip ${picked.includes(i)?'active':''}`} style={{width:52, height:52}} disabled={picked.includes(i)}>{ch}</button>
+            <button key={i} onClick={() => pick(i)} className={`chip ${picked.includes(i)?'active':''}`} style={{width:56, height:56, fontSize:'20px'}} disabled={picked.includes(i)}>{ch}</button>
           ))}
         </div>
         <div className="chips-row" style={{marginTop:10, justifyContent:'center'}}>
           {picked.map((i, k) => (
-            <button key={`${i}-${k}`} onClick={() => unpick(i)} className="chip active" style={{width:52, height:52}}>{letters[i]}</button>
+            <button key={`${i}-${k}`} onClick={() => unpick(i)} className="chip active" style={{width:56, height:56, fontSize:'20px'}}>{letters[i]}</button>
           ))}
         </div>
         <div className="subtitle" style={{marginTop:8}}>{current}</div>
         {hintEmoji && <div className="subtitle" style={{marginTop:12, fontSize:48}}>{hintEmoji}</div>}
         <div style={{marginTop:12, display:'flex', gap:10, justifyContent:'center'}}>
-          <button onClick={submit} className="btn btn-primary">Проверить</button>
+          <button onClick={submit} className="btn btn-primary" style={{padding:'16px 20px', fontSize:'20px'}}>Проверить</button>
           {onBack && <button onClick={onBack} className="btn btn-secondary">В меню</button>}
         </div>
         {error && <div className="info" style={{marginTop:10, border:'1px solid rgba(239,68,68,.5)', background:'rgba(239,68,68,.15)'}}>{error}</div>}

@@ -19,16 +19,16 @@ export default function GameSequence({ question, items, onWin, onBack }) {
   return (
     <div style={{textAlign:'center'}}>
       <div className="card" style={{padding:20}}>
-        <div className="title" style={{fontSize:20, marginBottom:10}}>🎁 Последовательность</div>
-        <div className="subtitle question-text" style={{marginBottom:12}}>{question}</div>
+        <div className="title" style={{fontSize:28, marginBottom:12}}>🎁 Последовательность</div>
+        <div className="subtitle question-text" style={{marginBottom:16, fontSize: 'clamp(20px, 5vw, 24px)'}}>{question}</div>
         <div className="chips-row">
           {items?.map(it => (
-            <button key={it.id} onClick={() => pick(it.id)} className={`chip ${picked.includes(it.id)?'active':''}`}>{it.text || it.label}</button>
+            <button key={it.id} onClick={() => pick(it.id)} className={`chip ${picked.includes(it.id)?'active':''}`} style={{padding:'16px', fontSize:'20px'}}>{it.text || it.label}</button>
           ))}
         </div>
         <div className="chips-row" style={{marginTop:12}}>
           {picked.map(id => (
-            <button key={`p-${id}`} onClick={() => unpick(id)} className="chip active">{labelById[id]}</button>
+            <button key={`p-${id}`} onClick={() => unpick(id)} className="chip active" style={{padding:'16px', fontSize:'20px'}}>{labelById[id]}</button>
           ))}
         </div>
         <div style={{marginTop:12, display:'flex', gap:10, justifyContent:'center'}}>

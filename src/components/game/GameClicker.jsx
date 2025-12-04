@@ -16,8 +16,8 @@ export default function GameClicker({ target = 10, label = 'Согрей ело�
   const glow = 6 + Math.round((count / target) * 18)
   return (
     <div style={{textAlign:'center'}}>
-      <div className="subtitle" style={{marginBottom:12}}>{label}</div>
-      <button onClick={click} className="btn btn-primary" style={{width:size, height:size, borderRadius:28, fontSize:64, lineHeight:'64px'}}>
+      <div className="subtitle question-text" style={{marginBottom:16, fontSize: 'clamp(20px, 5vw, 24px)'}}>{label}</div>
+      <button onClick={click} className="btn btn-primary" style={{width:size, height:size, borderRadius:28, fontSize:72, lineHeight:'72px'}}>
         <span style={{filter: `drop-shadow(0 0 ${glow}px #22d3ee) drop-shadow(0 0 ${Math.round(glow/2)}px #34d399)`, transform: `scale(${1 + (count/target)*0.2})`}}>{emoji}</span>
       </button>
       <div className="w-full h-4 bg-white/10 rounded-full overflow-hidden" style={{marginTop:12}}>

@@ -41,8 +41,8 @@ const DayPage = () => {
           <div style={{textAlign:'left'}}>
             <div className="title" style={{fontSize:24}}>✨ Победа!</div>
             <div className="subtitle" style={{marginBottom:16}}>История:</div>
-            <div className="card" style={{padding:20}}>
-              <div className="story-text" style={{whiteSpace:'pre-wrap', fontSize:'clamp(18px, 5vw, 22px)'}}>{story}</div>
+            <div className="card" style={{padding:24}}>
+              <div className="story-text" style={{whiteSpace:'pre-wrap', fontSize:'clamp(22px, 6vw, 28px)', lineHeight:1.8}}>{story}</div>
             </div>
             <div style={{marginTop:16, display:'flex', gap:12, flexWrap:'wrap'}}>
               {!isReplay && (

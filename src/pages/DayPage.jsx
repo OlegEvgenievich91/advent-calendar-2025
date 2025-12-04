@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import GameEngine from '../components/GameEngine.jsx'
+import PaywallModal from '../components/PaywallModal.jsx'
 import { QUEST_DATA } from '../data/quests.js'
 import { useAuth } from '../context/AuthContext'
 import { generateStory } from '../lib/openai.js'
@@ -13,6 +14,7 @@ const DayPage = () => {
   const [won, setWon] = useState(false)
   const [story, setStory] = useState('')
   const [saving, setSaving] = useState(false)
+  const [showPaywall, setShowPaywall] = useState(false)
   const isReplay = Number(day) < (user?.currentDay || 1)
   return (
     <div className="container-center">
@@ -54,11 +56,15 @@ const DayPage = () => {
                   } finally { setSaving(false) }
                 }}>{saving? 'Сохраняем...' : 'Продолжить'}</button>
               )}
+              {Number(day) === 1 && !user?.isPaid && (
+                <button className="btn btn-gold" style={{width:'100%', padding:'16px', borderRadius:16, fontSize:20}} onClick={()=> setShowPaywall(true)}>Получить полный доступ 🔓</button>
+              )}
               <button className="btn btn-secondary" onClick={()=> navigate('/calendar', { replace:true })}>{isReplay ? 'Вернуться' : 'Вернуться к календарю'}</button>
               {Number(day) === 10 && (
                 <button className="btn btn-primary" onClick={()=> navigate('/diploma')}>Получить диплом</button>
               )}
             </div>
+            {showPaywall && (<PaywallModal onClose={()=> setShowPaywall(false)} />)}
           </div>
         )}
       </div>

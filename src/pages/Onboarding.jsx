@@ -80,8 +80,8 @@ const Onboarding = () => {
     };
 
     return (
-        <div className="container-center">
-            <div className="card">
+        <div className="container-center" style={{paddingInline: 24}}>
+            <div className="card" style={{paddingInline: 24}}>
                 <div className="title">🎄 Добро пожаловать!</div>
                 <div className="subtitle">Расскажите немного о себе, чтобы начать новогоднее приключение</div>
                 <div className="decor-row" style={{justifyContent:'center', marginBottom:12}}>

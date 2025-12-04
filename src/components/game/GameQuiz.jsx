@@ -12,10 +12,10 @@ export default function GameQuiz({ question, options, onWin, onBack }) {
     <div style={{textAlign:'center'}}>
       <div className="card" style={{padding:20}}>
         <div className="title" style={{fontSize:20, marginBottom:10}}>🎁 Выбор ответа</div>
-        <div className="subtitle" style={{marginBottom:12}}>{question}</div>
-        <div className="chips" style={{flexWrap:'wrap', justifyContent:'center'}}>
+        <div className="subtitle question-text" style={{marginBottom:12}}>{question}</div>
+        <div className="quiz-grid">
           {options?.map((opt, i) => (
-            <button key={opt.id || i} onClick={() => setSelected(i)} className={`chip ${selected===i?'active':''}`}>{opt.text || String(opt)}</button>
+            <button key={opt.id || i} onClick={() => setSelected(i)} className={`quiz-btn ${selected===i?'active':''}`}>{opt.text || String(opt)}</button>
           ))}
         </div>
         <div style={{marginTop:12, display:'flex', gap:10, justifyContent:'center'}}>

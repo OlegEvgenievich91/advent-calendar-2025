@@ -20,7 +20,7 @@ export default function GameSequence({ question, items, onWin, onBack }) {
     <div style={{textAlign:'center'}}>
       <div className="card" style={{padding:20}}>
         <div className="title" style={{fontSize:20, marginBottom:10}}>🎁 Последовательность</div>
-        <div className="subtitle" style={{marginBottom:12}}>{question}</div>
+        <div className="subtitle question-text" style={{marginBottom:12}}>{question}</div>
         <div className="chips-row">
           {items?.map(it => (
             <button key={it.id} onClick={() => pick(it.id)} className={`chip ${picked.includes(it.id)?'active':''}`}>{it.text || it.label}</button>

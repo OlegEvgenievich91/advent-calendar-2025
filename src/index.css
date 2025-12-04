@@ -11,7 +11,7 @@
 }
 
 html, body, #root { height: 100%; }
-body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, 'Apple Color Emoji','Segoe UI Emoji'; color: var(--text); }
+body { margin: 0; font-family: 'Comfortaa', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, 'Apple Color Emoji','Segoe UI Emoji'; color: var(--text); }
 
 .container-center { min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 4vw, 24px); padding-bottom: max(clamp(12px, 4vw, 24px), env(safe-area-inset-bottom)); }
 
@@ -23,20 +23,20 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 }
 @media (max-width: 420px) { .card { border-radius: 18px; } }
 
-.title { font-size: 34px; font-weight: 800; margin: 0 0 8px; display: flex; align-items: center; gap: 12px; }
+.title { font-size: 34px; font-weight: 800; margin: 0 0 8px; display: flex; align-items: center; gap: 12px; font-family: 'Comfortaa', sans-serif; }
 .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
 
 .field { margin-bottom: 18px; }
 .label { display:block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-.input { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); outline: none; transition: 200ms; }
+.input { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); outline: none; transition: 200ms; min-width: 0; }
 .input::placeholder { color: rgba(255,255,255,0.6); }
-.input:focus { border-color: #a78bfa; box-shadow: 0 0 0 3px rgba(167,139,250,0.25); }
+.input:focus { border-color: #a78bfa; box-shadow: 0 0 0 2px rgba(167,139,250,0.35); }
 .input-wrap { width:100%; border-radius:16px; overflow:hidden; }
-.story-text { font-size: clamp(15px, 4vw, 18px); background: linear-gradient(90deg,#ffd54f,#ffe082,#ffd54f); -webkit-background-clip: text; background-clip: text; color: #ffd54f; }
+.story-text { font-size: clamp(15px, 4vw, 18px); background: linear-gradient(90deg,#ffd54f,#ffe082,#ffd54f); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; overflow-wrap: anywhere; line-height: 1.6; }
 .chips-row { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 
-.chips { display: flex; gap: 12px; }
-.chip { flex: 1; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); cursor: pointer; transition: 200ms; text-align:center; }
+.chips { display: flex; gap: 12px; flex-wrap: wrap; }
+.chip { flex: 1 1 calc(50% - 12px); padding: 12px 14px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); cursor: pointer; transition: 200ms; text-align:center; min-width: 0; }
 .chip:hover { transform: translateY(-1px); }
 .chip.active { background: rgba(124,58,237,0.8); border-color: #c4b5fd; }
 
@@ -89,3 +89,11 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .decor-row { display:flex; gap:10px; }
 .heading-row { display:flex; align-items:center; justify-content:center; gap: 16px; }
 .heading-row .title { margin: 0; }
+.question-text { font-family: 'Comfortaa', sans-serif; font-size: clamp(16px, 4vw, 18px); }
+.diploma-script { font-family: 'Caveat', cursive; font-size: 20px; }
+.story-text { font-family: 'Caveat', cursive; font-size: clamp(16px, 4vw, 20px); background: linear-gradient(90deg,#ffd54f,#ffe082,#ffd54f); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; overflow-wrap: anywhere; line-height: 1.7; }
+
+.quiz-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 380px) { .quiz-grid { grid-template-columns: 1fr; } }
+.quiz-btn { display:flex; align-items:center; justify-content:center; height: 48px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); cursor: pointer; transition:200ms; }
+.quiz-btn.active { background: rgba(124,58,237,0.8); border-color: #c4b5fd; }

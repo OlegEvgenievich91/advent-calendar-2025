@@ -15,8 +15,8 @@ const DayPage = () => {
   const [saving, setSaving] = useState(false)
   const isReplay = Number(day) < (user?.currentDay || 1)
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="glass-effect rounded-3xl p-8 max-w-md w-full text-center">
+    <div className="container-center">
+      <div className="card" style={{maxWidth: 560, textAlign:'center'}}>
         <h1 className="text-3xl font-bold text-white mb-4">🎮 День {day}</h1>
         {!won ? (
           <div>

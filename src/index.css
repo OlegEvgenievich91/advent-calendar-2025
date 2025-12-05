@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
   --bg-start: #0b1023;
   --bg-mid: #1a1f3a;
@@ -9,7 +11,6 @@
   --primary: #7c3aed;
   --accent: #ef4444;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 html, body, #root { height: 100%; }
 body { margin: 0; font-family: 'Comfortaa', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, 'Apple Color Emoji','Segoe UI Emoji'; color: var(--text); }
@@ -98,5 +99,6 @@ body { margin: 0; font-family: 'Comfortaa', ui-sans-serif, system-ui, -apple-sys
 @media (max-width: 380px) { .quiz-grid { grid-template-columns: 1fr; } }
 .quiz-btn { display:flex; align-items:center; justify-content:center; height: 48px; border-radius: 14px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.1); color: var(--text); cursor: pointer; transition:200ms; }
 .quiz-btn.active { background: rgba(124,58,237,0.8); border-color: #c4b5fd; }
-:root {
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+.pointer-events-none { pointer-events: none; }

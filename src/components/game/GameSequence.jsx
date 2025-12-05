@@ -28,8 +28,8 @@ export default function GameSequence({ question, items, onWin, onBack }) {
               <button
                 key={it.id}
                 onClick={() => pick(it.id)}
-                className={`chip ${chosen?'active':''}`}
-                style={{padding:'16px', fontSize:'20px', opacity: chosen ? 0 : 1, pointerEvents: chosen ? 'none' : 'auto'}}
+                className={`chip ${chosen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                style={{padding:'16px', fontSize:'20px'}}
               >
                 {it.text || it.label}
               </button>

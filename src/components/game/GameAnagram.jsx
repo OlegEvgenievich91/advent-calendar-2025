@@ -27,8 +27,8 @@ export default function GameAnagram({ question, letters: inputLetters, word, hin
               <button
                 key={i}
                 onClick={() => pick(i)}
-                className={`chip ${used?'active':''}`}
-                style={{width:64, height:64, fontSize:'22px', opacity: used ? 0 : 1, pointerEvents: used ? 'none' : 'auto'}}
+                className={`chip ${used ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                style={{width:64, height:64, fontSize:'22px'}}
                 disabled={used}
               >
                 {ch}
